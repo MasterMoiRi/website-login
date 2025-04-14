@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiLєє - landscape</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container" id="login-page">
+        <div class="logo">
+            <img src="hilee logo.png" alt="Logo" width="80px" height="50px">
+            <h1>HiLєє</h1>
+        </div>
+        
+        <h2>WELCOME!</h2>
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" id="username" placeholder="Username">
+        </div>
+        
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password">
+            <i class="fas fa-lock toggle-icon" onclick="togglePassword('password', this)"></i>
+        </div>  
+        
+        <p id="login-error" style="color: red; display: none;">Please enter username and password.</p>
+        <button class="login-btn" onclick="validateLogin()">Login</button> 
+        <a href="#" onclick="showPage('reset-password-page')">Forgot password?</a>
+        <button class="create-text">Create</button>
+        <p class="signin-text">Don't have an account? 
+        <a href="#" onclick="showPage('Sign-Up-page')">SignUp</a> 
+        </p>
+        
+    <div class="sparkle sparkle-top-right"></div>
+    <div class="sparkle sparkle-bottom-left"></div>
+    <div class="sparkle sparkle-top-left"></div>
+    <div class="sparkle sparkle-bottom-right"></div>
+    </div>
+
+    <div class="container" id="Sign-Up-page" style="display: none;">
+        <div class="logo">
+            <img src="hilee logo.png" alt="Logo" width="40px" height="50px">
+            <h1>HiLєє</h1>
+        </div>
+        
+        <h2>Sign Up</h2>
+        <form onsubmit="return validateSignup()">
+            <p id="signup-error" style="color: red; display: none;">Please fill out all fields correctly.</p> 
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Name" id="signup-name">
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" id="signup-email">
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="create-password" placeholder="Password">
+                <i class="fas fa-lock toggle-icon" onclick="togglePassword('create-password', this)"></i>
+            </div>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="signin-text">Already have an account? <a href="#" onclick="showPage('login-page')">Login</a></p>
+    </div>
+
+    <div class="container" id="reset-password-page" style="display: none;">
+        <div class="logo">
+            <img src="hilee logo.png" alt="Logo" width="40px" height="50px">
+            <h1>HiLєє</h1>
+        </div>
+        
+        <h2>Reset Password</h2>
+        <form onsubmit="return validateResetPassword()">
+            <p id="reset-password-error" style="color: red; display: none;">Please fill out all fields correctly.</p> <!-- Added this error message -->
+            <div class="input-group">
+                <input type="password" id="reset-password" placeholder="Enter old Password">
+                <i class="fas fa-lock toggle-icon" onclick="togglePassword('reset-password', this)"></i>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" id="reset-email">
+            </div>
+            <button type="submit">Reset</button>
+        </form>
+        <p class="signin-text">Already have an account? <a href="#" onclick="showPage('login-page')">Login</a></p>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
